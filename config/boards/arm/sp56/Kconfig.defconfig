@@ -4,7 +4,7 @@
 if BOARD_SP56_LEFT
 
 	config ZMK_KEYBOARD_NAME
-	default "COBO SP56"
+	default "DaBunckBoard"
 
 endif # BOARD_SP56_LEFT
 
