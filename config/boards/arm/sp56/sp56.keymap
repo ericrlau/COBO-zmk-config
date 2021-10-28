@@ -35,7 +35,7 @@ dvorak_layer {
                                  &kp LGUI &mo LWR &kp RET        &kp SPACE &mo RSE &kp RALT   
    &kp C_MUTE                                                                                                &kp C_MUTE
                         >;
-			sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
+			sensor-bindings = <&inc_dec_kp DOWN UP>;
                 };
 
         qwerty_layer {
@@ -94,7 +94,7 @@ dvorak_layer {
 &kp C_MUTE                                                                                                                                                        &kp C_MUTE
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOLUP_DN C_VOL_UP>;
 		};
 
 	raise_layer {
@@ -114,7 +114,7 @@ dvorak_layer {
 
 			>;
 
-			sensor-bindings = <&inc_dec_kp DOWN UP>;
+			sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
 		};
                 
         };
