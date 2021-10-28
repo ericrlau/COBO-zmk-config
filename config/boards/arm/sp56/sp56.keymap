@@ -94,7 +94,7 @@ dvorak_layer {
 &kp C_MUTE                                                                                                                                                        &kp C_MUTE
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOLUP_DN C_VOL_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 	raise_layer {
