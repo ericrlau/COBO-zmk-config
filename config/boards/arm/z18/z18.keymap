@@ -8,9 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define QWRT 0
-#define LWR 1
-#define RSE 2
+#define MAIN 0
 
 
 / {
