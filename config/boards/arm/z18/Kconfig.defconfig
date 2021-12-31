@@ -2,20 +2,10 @@
 # SPDX-License-Identifier: MIT
 
 if BOARD_Z18
-
 	config ZMK_KEYBOARD_NAME
-	default "Z18"
-
-endif # BOARD_SF65
-
-
-if BOARD_Z18
-
-config BOARD
 	default "z18"
 
-# config ZMK_SPLIT
-# 	default y
+endif
 
 menuconfig SENSOR
     bool "Sensor Drivers"
