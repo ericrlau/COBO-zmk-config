@@ -2,10 +2,17 @@
 # SPDX-License-Identifier: MIT
 
 if BOARD_Z18
+
 	config ZMK_KEYBOARD_NAME
 	default "z18"
 
 endif
+
+
+if BOARD_Z18
+
+config BOARD
+	default "z18"
 
 menuconfig SENSOR
     bool "Sensor Drivers"
@@ -32,4 +39,4 @@ config USB_DEVICE_STACK
 
 endif # USB
 
-endif # BOARD_SP56_LEFT || BOARD_SP56_RIGHT
+endif 
