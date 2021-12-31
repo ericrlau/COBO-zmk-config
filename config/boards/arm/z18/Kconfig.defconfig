@@ -3,13 +3,8 @@
 
 if BOARD_Z18
 
-	config ZMK_KEYBOARD_NAME
-	default "z18"
-
-endif
-
-
-if BOARD_Z18
+config ZMK_KEYBOARD_NAME
+	default "COBO Z18"
 
 config BOARD
 	default "z18"
@@ -26,8 +21,8 @@ config ZMK_BLE
 config ZMK_USB
 	default y
 
-config ZMK_BATTERY_VOLTAGE_DIVIDER
-	default y
+# config ZMK_BATTERY_VOLTAGE_DIVIDER
+# 	default y
 
 if USB
 
@@ -39,4 +34,4 @@ config USB_DEVICE_STACK
 
 endif # USB
 
-endif 
+endif # BOARD_SF65
