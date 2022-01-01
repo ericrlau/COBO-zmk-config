@@ -70,7 +70,7 @@
 			, <&gpio1 10 GPIO_ACTIVE_HIGH> // Col0
 			, <&gpio1  4 GPIO_ACTIVE_HIGH>
 			, <&gpio1 11 GPIO_ACTIVE_HIGH> // Col1
-			, <&gpio0  2 GPIO_ACTIVE_HIGH> // Col6
+			, <&gpio1  2 GPIO_ACTIVE_HIGH> // Col6
 			, <&gpio0  3 GPIO_ACTIVE_HIGH> // Col2
 			, <&gpio1  0 GPIO_ACTIVE_HIGH> // Col12
 			, <&gpio0 28 GPIO_ACTIVE_HIGH> // Col3
