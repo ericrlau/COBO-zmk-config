@@ -9,8 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWRT 0
-#define LWR 1
-#define RSE 2
+#define RSE 1
 
 
 / {
