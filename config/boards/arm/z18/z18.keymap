@@ -20,11 +20,11 @@
                 qwerty_layer {
 
                         bindings = <
-   &gresc    &kp N1   &kp N2   &kp N3   &kp N4  &kp N5    &kp N6   &kp N7  &kp N8   &kp N9    &kp N0   &kp MINUS &kp EQUAL &kp BSPC  &kp DEL   &kp KP_DIVIDE  &kp KP_MULTIPLY &kp KP_MINUS
-   &kp TAB   &kp Q    &kp W    &kp E    &kp R   &kp T     &kp Y    &kp U   &kp I    &kp O     &kp P    &kp LBRC  &kp RBRC  &kp BSLH  &kp N7    &kp N8         &kp N9          &kp KP_PLUS
-   &kp CAPS  &kp A    &kp S    &kp D    &kp F   &kp G     &kp H    &kp J   &kp K    &kp L     &kp SEMI &kp SQT   &kp BSLH  &kp ENTER &kp N4    &kp N5         &kp N6
-   &kp LSHFT          &kp Z    &kp X    &kp C   &kp V     &kp B    &kp N   &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHFT &kp UP    &kp N1    &kp N2         &kp N3          &kp ENTER
-   &kp LCTRL &kp LGUI &kp LALT                  &kp SPACE                  &kp RALT &mo RSE   &kp RCTRL          &kp LEFT  &kp DOWN  &kp RIGHT &kp N0         &kp DOT   
+   &gresc    &kp N1   &kp N2   &kp N3   &kp N4  &kp N5    &kp N6   &kp N7  &kp N8   &kp N9    &kp N0   &kp DASH  &kp EQUAL &kp BSPC  &kp DEL   &kp KP_DIVIDE  &kp KP_MULTIPLY &kp KP_MINUS
+   &kp TAB   &kp Q    &kp W    &kp E    &kp R   &kp T     &kp Y    &kp U   &kp I    &kp O     &kp P    &kp LBKT  &kp RBKT  &kp BSLH  &kp KP_N7 &kp KP_N8      &kp KP_N9       &kp KP_PLUS
+   &kp CAPS  &kp A    &kp S    &kp D    &kp F   &kp G     &kp H    &kp J   &kp K    &kp L     &kp SEMI &kp SQT   &kp ENTER           &kp KP_N4 &kp KP_N5      &kp KP_N6
+   &kp LSHFT          &kp Z    &kp X    &kp C   &kp V     &kp B    &kp N   &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHFT &kp UP    &kp KP_N1 &kp KP_N2      &kp KP_N3       &kp ENTER
+   &kp LCTRL &kp LGUI &kp LALT                  &kp SPACE                  &kp RALT &mo RSE   &kp RCTRL          &kp LEFT  &kp DOWN  &kp RIGHT  &kp KP_N0     &kp DOT   
                         >;
                 };
        
