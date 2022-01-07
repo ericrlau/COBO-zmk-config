@@ -75,13 +75,13 @@
 
 	};
 
-	// vbatt {
-	// 	compatible = "zmk,battery-voltage-divider";
-	// 	label = "BATTERY";
-	// 	io-channels = <&adc 6>;
-	// 	output-ohms = <2000000>;
-	// 	full-ohms = <(2000000 + 820000)>;
-	// };
+	vbatt {
+		compatible = "zmk,battery-voltage-divider";
+		label = "BATTERY";
+		io-channels = <&adc 6>;
+		output-ohms = <2000000>;
+		full-ohms = <(2000000 + 820000)>;
+	};
 	
 };
 
