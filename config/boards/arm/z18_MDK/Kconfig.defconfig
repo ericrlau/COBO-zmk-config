@@ -1,10 +1,18 @@
 # Copyright (c) 2021 Eric Lau
 # SPDX-License-Identifier: MIT
 
+if BOARD_DONGLE
+	config ZMK_KEYBOARD_NAME
+	default "Z18_USB"
+endif
+
 if BOARD_Z18
 
 config ZMK_KEYBOARD_NAME
 	default "COBO Z18"
+endif
+
+if  BOARD_DONGLE || BOARD_Z18
 
 config BOARD
 	default "z18"
