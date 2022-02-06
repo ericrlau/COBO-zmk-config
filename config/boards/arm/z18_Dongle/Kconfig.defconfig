@@ -17,6 +17,9 @@ if  BOARD_DONGLE || BOARD_Z18
 config BOARD
 	default "z18"
 
+config ZMK_SPLIT
+	default y
+
 menuconfig SENSOR
     bool "Sensor Drivers"
 
@@ -40,6 +43,6 @@ config USB_NRFX
 config USB_DEVICE_STACK
 	default y
 
-endif # USB
+endif 
 
-endif # BOARD_SF65
+endif 
