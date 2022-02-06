@@ -1,24 +1,13 @@
 # Copyright (c) 2021 Eric Lau
 # SPDX-License-Identifier: MIT
 
-if BOARD_DONGLE
-	config ZMK_KEYBOARD_NAME
-	default "Z18_USB"
-endif
-
-if BOARD_Z18_KEYBOARD
+if BOARD_Z18
 
 config ZMK_KEYBOARD_NAME
 	default "COBO Z18"
-endif
-
-if  BOARD_DONGLE || BOARD_Z18_KEYBOARD
 
 config BOARD
 	default "z18"
-
-config ZMK_SPLIT
-	default y
 
 menuconfig SENSOR
     bool "Sensor Drivers"
@@ -43,6 +32,6 @@ config USB_NRFX
 config USB_DEVICE_STACK
 	default y
 
-endif 
+endif # USB
 
-endif 
+endif # BOARD_SF65

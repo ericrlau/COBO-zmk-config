@@ -103,39 +103,39 @@ jobs:
       #     name: sf65
       #     path: sf65.uf2
         
-      # - name: West Build (Z18)
-      #   uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-      #   id: west-build-z18
-      #   with:
-      #     args: 'build "-s zmk/app -b z18 -d z18 -- -DZMK_CONFIG=/github/workspace/config"'
-      # - name: Z18 DTS File
-      #   if: ${{ always() }}
-      #   run: cat z18/zephyr/z18.dts.pre.tmp
-      # - name: Z18 Kconfig file
-      #   run: cat z18/zephyr/.config | grep -v "^#" | grep -v "^$"
-      # - name: Rename zmk.uf2
-      #   run: cp z18/zephyr/zmk.uf2 z18.uf2
-      # - name: Archive (Z18)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: z18
-      #     path: z18.uf2
-
-
-      - name: West Build (z18_dongle)
+      - name: West Build (Z18)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-z18_dongle
+        id: west-build-z18
         with:
-          args: 'build "-s zmk/app -b z18_dongle -d z18_dongle -- -DZMK_CONFIG=/github/workspace/config"'
-      - name: z18_dongle DTS File
+          args: 'build "-s zmk/app -b z18 -d z18 -- -DZMK_CONFIG=/github/workspace/config"'
+      - name: Z18 DTS File
         if: ${{ always() }}
-        run: cat z18_dongle/zephyr/z18_dongle.dts.pre.tmp
-      - name: z18_dongle Kconfig file
-        run: cat z18_dongle/zephyr/.config | grep -v "^#" | grep -v "^$"
+        run: cat z18/zephyr/z18.dts.pre.tmp
+      - name: Z18 Kconfig file
+        run: cat z18/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp z18_dongle/zephyr/zmk.uf2 z18_dongle.uf2
-      - name: Archive (z18_dongle)
+        run: cp z18/zephyr/zmk.uf2 z18.uf2
+      - name: Archive (Z18)
         uses: actions/upload-artifact@v2
         with:
-          name: z18_dongle
-          path: z18_dongle.uf2
+          name: z18
+          path: z18.uf2
+
+
+      # - name: West Build (z18_dongle)
+      #   uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
+      #   id: west-build-z18_dongle
+      #   with:
+      #     args: 'build "-s zmk/app -b z18_dongle -d z18_dongle -- -DZMK_CONFIG=/github/workspace/config"'
+      # - name: z18_dongle DTS File
+      #   if: ${{ always() }}
+      #   run: cat z18_dongle/zephyr/z18_dongle.dts.pre.tmp
+      # - name: z18_dongle Kconfig file
+      #   run: cat z18_dongle/zephyr/.config | grep -v "^#" | grep -v "^$"
+      # - name: Rename zmk.uf2
+      #   run: cp z18_dongle/zephyr/zmk.uf2 z18_dongle.uf2
+      # - name: Archive (z18_dongle)
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: z18_dongle
+      #     path: z18_dongle.uf2
