@@ -6,13 +6,13 @@ if BOARD_DONGLE
 	default "Z18_USB"
 endif
 
-if BOARD_Z18
+if BOARD_Z18_KEYBOARD
 
 config ZMK_KEYBOARD_NAME
 	default "COBO Z18"
 endif
 
-if  BOARD_DONGLE || BOARD_Z18
+if  BOARD_DONGLE || BOARD_Z18_KEYBOARD
 
 config BOARD
 	default "z18"

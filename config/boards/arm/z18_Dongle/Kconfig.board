@@ -1,10 +1,10 @@
-# SF65 board configuration
+# Z18 board configuration
 
 # Copyright (c) 2021 Eric Lau
 # SPDX-License-Identifier: MIT
 
-config BOARD_Z18
-	bool "Z18"
+config BOARD_Z18_KEYBOARD
+	bool "Z18_KEYBOARD"
 	depends on SOC_NRF52840_QIAA
 
 config BOARD_DONGLE
