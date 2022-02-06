@@ -7,6 +7,6 @@ config BOARD_Z18_KEYBOARD
 	bool "Z18_KEYBOARD"
 	depends on SOC_NRF52840_QIAA
 
-config BOARD_DONGLE
+config BOARD_Z18_DONGLE
 	bool "Z18_USB"
 	depends on SOC_NRF52840_QIAA
