@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "sp56.dtsi"
+#include "z18.dtsi"
