@@ -126,21 +126,21 @@ jobs:
         id: west-build-z18_dongle
         with:
           args: 'build "-s zmk/app -b z18_dongle -d z18_dongle -- -DZMK_CONFIG=/github/workspace/config"'
-      - name: SP56 DTS File
+      - name: Z18_DONGLE DTS File
         if: ${{ always() }}
         run: cat z18_dongle/zephyr/z18_dongle.dts.pre.tmp
-      - name: SP56 Left Kconfig file
+      - name: z18_dongle Kconfig file
         run: cat z18_dongle/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp z18_dongle/zephyr/zmk.uf2 z18_dongle.uf2
-      - name: Archive (SP56 Left)
+      - name: Archive (z18_dongle)
         uses: actions/upload-artifact@v2
         with:
           name: z18_dongle
           path: z18_dongle.uf2
 
 
-      - name: West Build (SP56 Right)
+      - name: West Build (z18_keyboard)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
         id: west-build-z18_keyboard
         with:
@@ -148,11 +148,11 @@ jobs:
       - name: SP56 DTS File
         if: ${{ always() }}
         run: cat z18_keyboard/zephyr/z18_keyboard.dts.pre.tmp
-      - name: SP56 Right Kconfig file
+      - name: z18_keyboard Kconfig file
         run: cat z18_keyboard/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp z18_keyboard/zephyr/zmk.uf2 z18_keyboard.uf2
-      - name: Archive (SP56 Right)
+      - name: Archive (z18_keyboard)
         uses: actions/upload-artifact@v2
         with:
           name: z18_keyboard
