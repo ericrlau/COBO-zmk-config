@@ -121,12 +121,12 @@ jobs:
       #     name: z18
       #     path: z18.uf2
 
-      - name: West Build (Z18 Dongle)
+      - name: West Build (z18_dongle)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
         id: west-build-z18_dongle
         with:
           args: 'build "-s zmk/app -b z18_dongle -d z18_dongle -- -DZMK_CONFIG=/github/workspace/config"'
-      - name: Z18_DONGLE DTS File
+      - name: z18_dongle DTS File
         if: ${{ always() }}
         run: cat z18_dongle/zephyr/z18_dongle.dts.pre.tmp
       - name: z18_dongle Kconfig file
@@ -145,7 +145,7 @@ jobs:
         id: west-build-z18_keyboard
         with:
           args: 'build "-s zmk/app -b z18_keyboard -d z18_keyboard -- -DZMK_CONFIG=/github/workspace/config"'
-      - name: SP56 DTS File
+      - name: Z18_keyboard DTS File
         if: ${{ always() }}
         run: cat z18_keyboard/zephyr/z18_keyboard.dts.pre.tmp
       - name: z18_keyboard Kconfig file
