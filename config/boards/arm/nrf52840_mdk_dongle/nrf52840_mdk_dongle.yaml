@@ -1,0 +1,15 @@
+identifier: nrf52840_mdk_dongle
+name: nRF52840-mdk-dongle
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - adc
+  - usb_device
+  - ble
+  - ieee802154
+  - pwm
+  - watchdog

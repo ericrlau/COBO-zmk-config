@@ -1,0 +1,131 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/dts-v1/;
+#include <nordic/nrf52840_qiaa.dtsi>
+
+/ {
+	model = "nRF52840-MDK Dongle Dev Kit";
+	compatible = "makerdiary,nrf52840_mdk_dongle";
+
+	chosen {
+		zephyr,code-partition = &code_partition;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led_0: led_green {
+			gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
+			label = "Green LED";
+			status = "okay";
+		};
+		led_1: led_red {
+			gpios = <&gpio0 23 GPIO_ACTIVE_LOW>;
+			label = "Red LED";
+			status = "okay";
+		};
+		led_2: led_blue {
+			gpios = <&gpio0 24 GPIO_ACTIVE_LOW>;
+			label = "Blue LED";
+			status = "okay";
+		};
+	};
+
+	pwmleds {
+		compatible = "pwm-leds";
+		pwm_led_0: pwm_led_green {
+			pwms = <&pwm0 22>;
+			label = "Green PWM LED";
+			status = "okay";
+		};
+		pwm_led_1: pwm_led_red {
+			pwms = <&pwm0 23>;
+			label = "Red PWM LED";
+			status = "okay";
+		};
+		pwm_led_2: pwm_led_blue {
+			pwms = <&pwm0 24>;
+			label = "Blue PWM LED";
+			status = "okay";
+		};
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+		button0: button0 {
+			gpios = <&gpio0 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Push button 0";
+			status = "okay";
+		};
+	};
+
+	/* These aliases are provided for compatibility with samples */
+	aliases {
+		ledgreen = &led_0;
+		ledred   = &led_1;
+		ledblue  = &led_2;
+		pwmledgreen = &pwm_led_0;
+		pwmledred = &pwm_led_1;
+		pwmledblue = &pwm_led_2;
+	};
+};
+
+&adc {
+	status = "okay";
+};
+
+&gpiote {
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&flash0 {
+	/*
+	 * For more information, see:
+	 * http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
+	 */
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		sd_partition: partition@0 {
+			label = "mbr";
+			reg = <0x00000000 0x00001000>;
+		};
+		code_partition: partition@1000 {
+			label = "code_partition";
+			reg = <0x00001000 0x000d3000>;
+		};
+
+		/*
+		 * The flash starting at 0x000d4000 and ending at
+		 * 0x000f3fff is reserved for use by the application.
+		 */
+
+		/*
+		 * Storage partition will be used by FCB/LittleFS/NVS
+		 * if enabled.
+		 */
+		storage_partition: partition@d4000 {
+			label = "storage";
+			reg = <0x000d4000 0x00020000>;
+		};
+
+		boot_partition: partition@f4000 {
+			label = "adafruit_boot";
+			reg = <0x000f4000 0x0000c000>;
+		};
+	};
+};

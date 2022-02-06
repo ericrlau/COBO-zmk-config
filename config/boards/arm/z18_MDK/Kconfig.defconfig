@@ -1,0 +1,37 @@
+# Copyright (c) 2021 Eric Lau
+# SPDX-License-Identifier: MIT
+
+if BOARD_Z18
+
+config ZMK_KEYBOARD_NAME
+	default "COBO Z18"
+
+config BOARD
+	default "z18"
+
+menuconfig SENSOR
+    bool "Sensor Drivers"
+
+config BT_CTLR
+	default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+config ZMK_BATTERY_VOLTAGE_DIVIDER
+	default y
+
+if USB
+
+config USB_NRFX
+	default y
+
+config USB_DEVICE_STACK
+	default y
+
+endif # USB
+
+endif # BOARD_SF65
