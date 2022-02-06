@@ -47,42 +47,42 @@ jobs:
           args: 'zephyr-export'
 
 
-      # - name: West Build (SP56 Left)
-      #   uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-      #   id: west-build-sp56-left
-      #   with:
-      #     args: 'build "-s zmk/app -b sp56_left -d sp56_left -- -DZMK_CONFIG=/github/workspace/config"'
-      # - name: SP56 DTS File
-      #   if: ${{ always() }}
-      #   run: cat sp56_left/zephyr/sp56_left.dts.pre.tmp
-      # - name: SP56 Left Kconfig file
-      #   run: cat sp56_left/zephyr/.config | grep -v "^#" | grep -v "^$"
-      # - name: Rename zmk.uf2
-      #   run: cp sp56_left/zephyr/zmk.uf2 sp56_left.uf2
-      # - name: Archive (SP56 Left)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: sp56_left
-      #     path: sp56_left.uf2
+      - name: West Build (SP56 Left)
+        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
+        id: west-build-sp56-left
+        with:
+          args: 'build "-s zmk/app -b sp56_left -d sp56_left -- -DZMK_CONFIG=/github/workspace/config"'
+      - name: SP56 DTS File
+        if: ${{ always() }}
+        run: cat sp56_left/zephyr/sp56_left.dts.pre.tmp
+      - name: SP56 Left Kconfig file
+        run: cat sp56_left/zephyr/.config | grep -v "^#" | grep -v "^$"
+      - name: Rename zmk.uf2
+        run: cp sp56_left/zephyr/zmk.uf2 sp56_left.uf2
+      - name: Archive (SP56 Left)
+        uses: actions/upload-artifact@v2
+        with:
+          name: sp56_left
+          path: sp56_left.uf2
 
 
-      # - name: West Build (SP56 Right)
-      #   uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-      #   id: west-build-sp56-right
-      #   with:
-      #     args: 'build "-s zmk/app -b sp56_right -d sp56_right -- -DZMK_CONFIG=/github/workspace/config"'
-      # - name: SP56 DTS File
-      #   if: ${{ always() }}
-      #   run: cat sp56_right/zephyr/sp56_right.dts.pre.tmp
-      # - name: SP56 Right Kconfig file
-      #   run: cat sp56_right/zephyr/.config | grep -v "^#" | grep -v "^$"
-      # - name: Rename zmk.uf2
-      #   run: cp sp56_right/zephyr/zmk.uf2 sp56_right.uf2
-      # - name: Archive (SP56 Right)
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: sp56_right
-      #     path: sp56_right.uf2
+      - name: West Build (SP56 Right)
+        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
+        id: west-build-sp56-right
+        with:
+          args: 'build "-s zmk/app -b sp56_right -d sp56_right -- -DZMK_CONFIG=/github/workspace/config"'
+      - name: SP56 DTS File
+        if: ${{ always() }}
+        run: cat sp56_right/zephyr/sp56_right.dts.pre.tmp
+      - name: SP56 Right Kconfig file
+        run: cat sp56_right/zephyr/.config | grep -v "^#" | grep -v "^$"
+      - name: Rename zmk.uf2
+        run: cp sp56_right/zephyr/zmk.uf2 sp56_right.uf2
+      - name: Archive (SP56 Right)
+        uses: actions/upload-artifact@v2
+        with:
+          name: sp56_right
+          path: sp56_right.uf2
 
 
       # - name: West Build (SF65)
